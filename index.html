@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -103,10 +102,10 @@
                         Passionné par la transformation des <strong>données en insights actionnables</strong>. Expert en pipelines de données, machine learning et visualisation avancée. Je conçois des solutions data-driven qui génèrent de la valeur métier mesurable.
                     </p>
                     <div class="hero-buttons">
-                        <a href="cv_bea_elieV1.5.pdf" class="btn btn-primary">
+                        <a id="downloadCV" href="#" class="btn btn-primary">
                             <i class="fas fa-download"></i>
                             <span data-fr="Télécharger CV" data-en="Download CV">Télécharger CV</span>
-                        </a>
+                          </a>
                         <a href="#contact" class="btn btn-secondary" data-fr="Me Contacter" data-en="Contact Me">Me Contacter</a>
                     </div>
                 </div>
@@ -216,7 +215,6 @@
                             <span class="skill-tag">Optimisation</span>
                         </div>
                     </div>
-
                     <!-- PostgreSQL -->
                     <div class="skill-item fade-in">
                         <div class="skill-icon">
@@ -228,7 +226,6 @@
                             <span class="skill-tag">Base de données</span>
                         </div>
                     </div>
-
                     <!-- SQL Server -->
                     <div class="skill-item fade-in">
                         <div class="skill-icon">
@@ -499,7 +496,6 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="certification-card fade-in">
                         <div class="cert-badge">
                             <i class="fas fa-chart-line"></i>
@@ -719,6 +715,17 @@
             </div>
         </footer>
     </div>
+    <!-- scripts cv-->
+    <script>
+        document.getElementById("downloadCV").addEventListener("click", function (e) {
+        e.preventDefault();
+        const link = document.createElement("a");
+        link.href = "cv_bea_elieV1_5.pdf"; // chemin vers ton PDF
+        link.download = "CV-Elie.pdf"; // nom du fichier téléchargé
+        link.click();
+         });
+    </script>
+
 
     <!-- Particles.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
