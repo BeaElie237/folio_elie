@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Moreau · Data Engineer & IA</title>
+    <!-- Bootstrap 5 + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Font (inter clean) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --deep-blue: #0b1c2f;
+            --electric-blue: #2565ae;
+            --neon-cyan: #3b9ae1;
+            --light-bg: #f4f9ff;
+            --card-glow: rgba(37, 101, 174, 0.08);
+        }
+        body { background-color: var(--light-bg); scroll-behavior: smooth; }
+        .navbar { background: rgba(11, 28, 47, 0.92) !important; backdrop-filter: blur(12px); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2); }
+        .navbar-brand, .nav-link { color: white !important; font-weight: 500; }
+        .nav-link:hover { color: var(--neon-cyan) !important; transform: scale(1.02); }
+        .hero-section { background: linear-gradient(145deg, var(--deep-blue) 0%, #123456 100%); color: white; padding: 6rem 0 4rem 0; border-bottom: 4px solid var(--neon-cyan); }
+        .profile-img { width: 100%; max-width: 320px; border-radius: 28px; box-shadow: 0 30px 40px -15px rgba(0,0,0,0.5); border: 3px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+        .profile-img:hover { transform: scale(1.01); border-color: var(--neon-cyan); }
+        .section-title { font-weight: 700; color: var(--deep-blue); margin-bottom: 2rem; position: relative; display: inline-block; }
+        .section-title:after { content: ''; position: absolute; bottom: -8px; left: 0; width: 70px; height: 4px; background: var(--electric-blue); border-radius: 4px; }
+        .card { border: none; border-radius: 28px; background: rgba(255,255,255,0.75); backdrop-filter: blur(2px); box-shadow: 0 15px 35px -8px var(--card-glow); transition: all 0.25s ease; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 40px -8px rgba(37, 101, 174, 0.25); }
+        .btn-outline-pro { border: 2px solid var(--electric-blue); color: var(--deep-blue); font-weight: 600; border-radius: 40px; padding: 0.5rem 1.6rem; }
+        .btn-outline-pro:hover { background: var(--electric-blue); color: white; }
+        .badge-filter { background: white; color: var(--deep-blue); border-radius: 50px; padding: 0.5rem 1.4rem; font-weight: 500; border: 1px solid rgba(37,101,174,0.3); cursor: pointer; transition: all 0.15s; }
+        .badge-filter.active, .badge-filter:hover { background: var(--electric-blue); color: white; border-color: var(--electric-blue); }
+        .skill-tag { background: rgba(37, 101, 174, 0.1); padding: 0.6rem 1.3rem; border-radius: 50px; font-weight: 500; color: var(--deep-blue); margin: 0.3rem; display: inline-block; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.6); }
+        .cert-card { border-left: 5px solid var(--neon-cyan); background: white; }
+        .modal-content { border-radius: 32px; border: none; box-shadow: 0 40px 60px rgba(0,0,0,0.3); }
+        .modal-header { border-bottom: 2px solid rgba(37,101,174,0.15); background: rgba(244,249,255,0.5); }
+        .contact-icon { font-size: 2rem; color: var(--electric-blue); margin-right: 0.8rem; transition: 0.2s; }
+        .contact-icon:hover { color: var(--deep-blue); transform: scale(1.1); }
+        footer { background: var(--deep-blue); color: #cddbe9; border-top: 4px solid var(--neon-cyan); }
+        .img-modal-preview { border-radius: 24px; width: 100%; max-height: 250px; object-fit: cover; }
+        /* dynamisme */
+        .hover-lift { transition: transform 0.2s; }
+        .hover-lift:hover { transform: translateY(-6px); }
+    </style>
+</head>
+<body>
+    <!-- Navigation moderne -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-cpu me-2" style="color: var(--neon-cyan);"></i>T. Moreau | Data & IA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#objectif">Objectif</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO: À propos de moi + photo -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-md-2 text-center">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Thomas portrait" class="profile-img" style="object-fit: cover; height: 350px;">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <span class="badge bg-info bg-opacity-25 text-white mb-3" style="letter-spacing: 1px;">👨‍💻 ÉTUDIANT · DATA ENGINEERING & IA</span>
+                    <h1 class="display-4 fw-bold">Thomas Moreau</h1>
+                    <p class="lead fs-4">Bâtisseur de pipelines data, explorateur d’IA & architectures Big Data. Passionné par les modèles génératifs et les systèmes temps réel.</p>
+                    <div class="mt-4 d-flex gap-3">
+                        <a href="#projets" class="btn btn-outline-light btn-lg px-4 py-3 rounded-5"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Explorer mes projets</a>
+                        <a href="#contact" class="btn btn-light btn-lg px-4 py-3 rounded-5" style="color: var(--deep-blue);"><i class="bi bi-chat-dots-fill me-2"></i>Me contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectif professionnel + photo (côte à côte) -->
+    <section id="objectif" class="py-5 container">
+        <div class="row align-items-center g-5">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="team collaboration" class="img-fluid rounded-5 shadow-lg" style="border-radius: 36px; max-height: 340px; width: 100%; object-fit: cover;">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">🎯 Objectif professionnel</h2>
+                <p class="fs-5" style="color: #1f2e45;">Je veux concevoir des systèmes de traitement de données massives et des solutions d’intelligence artificielle robustes, éthiques et scalables. Mon rêve ? Intégrer une équipe R&D en Deep Tech où je pourrai marier <strong>data engineering, MLOps et IA distribuée</strong>.</p>
+                <div class="row mt-4">
+                    <div class="col-6"><i class="bi bi-lightning-charge-fill" style="color: var(--electric-blue);"></i> <strong>Disponibilité</strong> : stage fin d’études (6 mois)</div>
+                    <div class="col-6"><i class="bi bi-geo-alt-fill" style="color: var(--electric-blue);"></i> <strong>Mobile</strong> Paris / Lyon / Remote</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTRES PROJETS + GRILLE PROJETS (data engineer / science / analyse) -->
+    <section id="projets" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title">📁 Projets phares</h2>
+            <div class="d-flex flex-wrap gap-3 mb-5" id="filter-buttons">
+                <span class="badge-filter active" data-filter="all">Tous</span>
+                <span class="badge-filter" data-filter="dataengineer">Data Engineer</span>
+                <span class="badge-filter" data-filter="datascience">Data Science</span>
+                <span class="badge-filter" data-filter="analyse">Analyse</span>
+            </div>
+
+            <div class="row g-4" id="project-cards">
+                <!-- Projet 1 : data engineer -->
+                <div class="col-md-4 project-item" data-category="dataengineer">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal1" style="cursor: pointer;">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Data Engineer</span>
+                            <h5>Pipeline temps réel Kafka + Spark</h5>
+                            <p class="text-secondary">Ingestion de tweets & météo, streaming analytique…</p>
+                            <button class="btn btn-outline-pro btn-sm">Détails modale</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 2 : data science -->
+                <div class="col-md-4 project-item" data-category="datascience">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=765&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Data Science</span>
+                            <h5>Détection d’anomalies (transformers)</h5>
+                            <p class="text-secondary">Modèle temps réel sur séries financières…</p>
+                            <button class="btn btn-outline-pro btn-sm">Détails modale</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 3 : analyse -->
+                <div class="col-md-4 project-item" data-category="analyse">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=715&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning mb-2">Analyse</span>
+                            <h5>Dashboard consommation énergie</h5>
+                            <p class="text-secondary">Analyses croisées avec dataviz dynamique…</p>
+                            <button class="btn btn-outline-pro btn-sm">Détails modale</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 4 : data engineer (pour étoffer) -->
+                <div class="col-md-4 project-item" data-category="dataengineer">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1172&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Data Engineer</span>
+                            <h5>Data Lakehouse sur AWS</h5>
+                            <p class="text-secondary">Iceberg, Airflow, DBT…</p>
+                            <button class="btn btn-outline-pro btn-sm">Détails modale</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 5 : data science -->
+                <div class="col-md-4 project-item" data-category="datascience">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal5">
+                        <img src="https://images.unsplash.com/photo-1677442135136-760c813028c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1032&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Data Science</span>
+                            <h5>LLM fine-tuning pour synthèse médicale</h5>
+                            <p class="text-secondary">Few-shot avec Llama…</p>
+                            <button class="btn btn-outline-pro btn-sm">Détails modale</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projet 6 : analyse -->
+                <div class="col-md-4 project-item" data-category="analyse">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#projectModal6">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" class="card-img-top" style="height:200px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning mb-2">Analyse</span>
+                            <h5>Segmentation client RFM</h5>
+                            <p class="text-secondary">Clustering et insights marketing…</p>
+                            <button class="btn btn-outline-pro btn-sm">Détails modale</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences (tags dynamiques) -->
+    <section id="competences" class="py-5" style="background: #e9f0fa;">
+        <div class="container">
+            <h2 class="section-title">⚙️ Compétences techniques</h2>
+            <div class="bg-white p-5 rounded-5 shadow-sm">
+                <div class="skill-tag"><i class="bi bi-filetype-py me-1"></i>Python</div><div class="skill-tag"><i class="bi bi-database"></i> SQL</div>
+                <div class="skill-tag">Spark</div><div class="skill-tag">Kafka</div><div class="skill-tag">Hadoop</div>
+                <div class="skill-tag">Airflow</div><div class="skill-tag">dbt</div><div class="skill-tag">AWS (S3, EMR)</div>
+                <div class="skill-tag">TensorFlow</div><div class="skill-tag">PyTorch</div><div class="skill-tag">Scikit-learn</div>
+                <div class="skill-tag">HuggingFace</div><div class="skill-tag">Docker</div><div class="skill-tag">Kubernetes</div>
+                <div class="skill-tag">Tableau</div><div class="skill-tag">Power BI</div><div class="skill-tag">MongoDB</div>
+                <div class="skill-tag">Neo4j</div><div class="skill-tag">Git/GitHub</div><div class="skill-tag">MLflow</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications avec modales details -->
+    <section id="certifications" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title">📜 Certifications</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card cert-card p-3" data-bs-toggle="modal" data-bs-target="#certModal1">
+                        <div class="d-flex align-items-center"><i class="bi bi-aws fs-1 me-3" style="color: #ff9900;"></i> <div><h5>AWS Certified Data Analytics</h5><p class="text-secondary">Spécialité · 2024</p></div></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card cert-card p-3" data-bs-toggle="modal" data-bs-target="#certModal2">
+                        <div class="d-flex align-items-center"><i class="bi bi-database fs-1 me-3" style="color: #0052cc;"></i><div><h5>Databricks Data Engineer Associate</h5><p class="text-secondary">2024</p></div></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card cert-card p-3" data-bs-toggle="modal" data-bs-target="#certModal3">
+                        <div class="d-flex align-items-center"><i class="bi bi-cpu fs-1 me-3" style="color: #9334ea;"></i><div><h5>DeepLearning.AI TensorFlow Developer</h5><p class="text-secondary">2023</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact + Réseaux -->
+    <section id="contact" class="py-5" style="background: linear-gradient(135deg, #e3efff 0%, #f9fcff 100%);">
+        <div class="container">
+            <h2 class="section-title">📬 Me contacter</h2>
+            <div class="row align-items-center g-5">
+                <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1531538606174-0e90d5c1ad0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" class="img-fluid rounded-5 shadow" style="border-radius: 40px;">
+                </div>
+                <div class="col-md-7">
+                    <p class="fs-3 fw-semibold">Discutons data & IA<span class="text-primary">.</span></p>
+                    <div class="d-flex flex-wrap gap-4 mt-4">
+                        <a href="#" class="contact-icon"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                        <a href="#" class="contact-icon"><i class="bi bi-github"></i> GitHub</a>
+                        <a href="#" class="contact-icon"><i class="bi bi-envelope-fill"></i> thomas.m@dataia.student</a>
+                        <a href="#" class="contact-icon"><i class="bi bi-twitter-x"></i> X / data</a>
+                    </div>
+                    <hr>
+                    <p><i class="bi bi-geo-alt"></i> Lyon, France · disponible pour stage ou collaborations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center">
+        <p class="mb-0">© 2025 Thomas Moreau — portfolio dynamique modale & filtres</p>
+    </footer>
+
+    <!-- MODALES PROJETS (6 exemples) -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Pipeline temps réel Kafka + Spark</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" class="img-modal-preview mb-3"><p><strong>Description :</strong> Mise en place d'un pipeline de streaming avec Kafka pour ingérer des tweets et données météo, traitement avec Spark Structured Streaming, stockage dans Cassandra et visualisation temps réel via Grafana. <br> <span class="badge bg-primary">Data Engineer</span></p></div></div></div></div>
+    <!-- Modal 2 -->
+    <div class="modal fade" id="projectModal2" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Détection d'anomalies (Transformers)</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=765&q=80" class="img-modal-preview mb-3"><p><strong>Description :</strong> Utilisation de modèles transformer (TimeSformer) pour détecter des anomalies dans des séries temporelles de capteurs industriels. Projet réalisé avec PyTorch, Optuna et déploiement via FastAPI.<br> <span class="badge bg-success">Data Science</span></p></div></div></div></div>
+    <!-- Modal 3 -->
+    <div class="modal fade" id="projectModal3" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Dashboard consommation énergie</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=715&q=80" class="img-modal-preview mb-3"><p><strong>Description :</strong> Création d’un tableau de bord interactif avec Power BI et Python (pandas) pour analyser les données de consommation électrique de Lyon. Prévisions avec Prophet.<br> <span class="badge bg-warning">Analyse</span></p></div></div></div></div>
+    <!-- Modal 4 -->
+    <div class="modal fade" id="projectModal4" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Data Lakehouse sur AWS</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1172&q=80" class="img-modal-preview mb-3"><p><strong>Description :</strong> Mise en place d'un lakehouse avec Apache Iceberg sur AWS S3, géré par Airflow et DBT pour des transformations fiables. Requêtes via Athena et EMR Spark.<br> <span class="badge bg-primary">Data Engineer</span></p></div></div></div></div>
+    <!-- Modal 5 -->
+    <div class="modal fade" id="projectModal5" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">LLM fine-tuning médical</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="https://images.unsplash.com/photo-1677442135136-760c813028c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1032&q=80" class="img-modal-preview mb-3"><p><strong>Description :</strong> Fine-tuning d’un modèle Llama 2 sur des abstracts médicaux pour générer des résumés explicatifs. Évaluation ROUGE, intégration avec LangChain.<br> <span class="badge bg-success">Data Science</span></p></div></div></div></div>
+    <!-- Modal 6 -->
+    <div class="modal fade" id="projectModal6" tabindex="-1"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Segmentation client RFM</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" class="img-modal-preview mb-3"><p><strong>Description :</strong> Analyse RFM et segmentation K-Means sur données e-commerce. Création d’un reporting interactif avec Streamlit.<br> <span class="badge bg-warning">Analyse</span></p></div></div></div></div>
+
+    <!-- MODALES CERTIFICATIONS détaillées -->
+    <div class="modal fade" id="certModal1" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5>AWS Certified Data Analytics – Spécialité</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Obtenue en juin 2024. Valide les compétences sur l'écosystème data AWS : Kinesis, EMR, Redshift, QuickSight, et bonnes pratiques d'architecture Big Data.</p><img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=600" class="img-fluid rounded-4"></div></div></div></div>
+    <div class="modal fade" id="certModal2" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5>Databricks Data Engineer Associate</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Certification Databricks (2024) : notebooks, Delta Lake, optimisation de jobs Spark, et développement de pipelines reproductibles.</p></div></div></div></div>
+    <div class="modal fade" id="certModal3" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5>DeepLearning.AI TensorFlow Developer</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p>Formation approfondie : CNN, RNN, NLP avec TensorFlow, transfer learning et déploiement de modèles. Projets validés par l'équipe d'Andrew Ng.</p></div></div></div></div>
+
+    <!-- Bootstrap JS + script filtre dynamique -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function() {
+            // FILTRES PROJETS
+            const filterBtns = document.querySelectorAll('.badge-filter');
+            const projects = document.querySelectorAll('.project-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    projects.forEach(project => {
+                        if (filterValue === 'all' || project.getAttribute('data-category') === filterValue) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // petit effet d'apparition sur les cards (optionnel)
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(c => c.classList.add('hover-lift'));
+        })();
+    </script>
+    <style> .project-item { transition: all 0.2s; } </style>
+</body>
+</html>

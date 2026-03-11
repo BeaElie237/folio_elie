@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>BEA - Data Engineer & Data Analyst</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Particles Background -->
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+        <!-- Navigation -->
+        <nav role="navigation">
+            <div class="nav-content">
+                <div class="logo">BEA ELIE</div>
+                <ul class="nav-links">
+                    <li><a href="#home" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                    <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
+                    <li><a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+                    <li><a href="#certifications" data-fr="Certifications" data-en="Certifications">Certifications</a></li>
+                    <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
+                    <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#contact" class="hire-btn" data-fr="Me Contacter" data-en="Hire Me">Me Contacter</a>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="lang-switcher" id="langToggle">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <div class="burger-menu" id="burgerMenu">
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                        <div class="burger-line"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="nav-links">
+                <li><a href="#home" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
+                <li><a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a></li>
+                <li><a href="#certifications" data-fr="Certifications" data-en="Certifications">Certifications</a></li>
+                <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
+                <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="hire-btn" data-fr="Me Contacter" data-en="Hire Me">Me Contacter</a>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <div class="modal-icon" id="modalIcon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 class="modal-title" id="modalTitle">Succès</h3>
+                <p class="modal-message" id="modalMessage">Votre message a été envoyé avec succès !</p>
+                <button class="modal-close-btn" id="modalCloseBtn" data-fr="Fermer" data-en="Close">Fermer</button>
+            </div>
+        </div>
+
+        <!-- WhatsApp Float Button -->
+        <a href="https://wa.me/237600000000?text=Bonjour%20Alex%2C%20je%20souhaiterais%20discuter%20d'un%20projet%20data%20(ing%C3%A9nierie%20ou%20analyse)." target="_blank" rel="noopener noreferrer" class="whatsapp-float" title="Contactez-moi sur WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <article class="hero-card">
+                <div class="hero-content">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/alex-chen-data" rel="noopener noreferrer" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/alexchendata" rel="noopener noreferrer" target="_blank" class="social-link github"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/alexchendata" rel="noopener noreferrer" target="_blank" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.kaggle.com/alexchendata" rel="noopener noreferrer" target="_blank" class="social-link kaggle"><i class="fab fa-kaggle"></i></a>
+                    </div>
+                    <h1 data-fr="BEA ELIE" data-en="BEA ELIE">BEA ELIE</h1>
+                    <p class="subtitle" data-fr="Data Engineer & Data Analyst" data-en="Data Engineer & Data Analyst">
+                        Data Engineer & Data Analyst
+                    </p>
+                    <p data-fr="Architecte de données et analyste passionné. Je construis des pipelines robustes et les transforme en tableaux de bord interactifs pour une prise de décision éclairée. Mon objectif : rendre la data accessible et actionable." data-en="Data architect and analyst passionate about building robust pipelines and transforming them into interactive dashboards for informed decision-making. My goal: make data accessible and actionable.">
+                        Architecte de données et analyste passionné. Je construis des <strong>pipelines robustes</strong> et les transforme en <strong>tableaux de bord interactifs</strong> pour une prise de décision éclairée. Mon objectif : rendre la data accessible et actionable.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-download"></i>
+                            <span data-fr="Télécharger CV" data-en="Download CV">Télécharger CV</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary" data-fr="Me Contacter" data-en="Contact Me">Me Contacter</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-illustration">
+                        
+                    </div>
+                    <div class="skill-badges">
+                        <div class="skill-badge">Python</div>
+                        <div class="skill-badge">SQL</div>
+                        <div class="skill-badge">Airflow</div>
+                        <div class="skill-badge">Power BI</div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- About Section -->
+            <article class="card full-width" id="about">
+                <div class="about-card fade-in">
+                    <div class="about-illustration">
+                        
+                    </div>
+                    <div class="about-content">
+                        <h2 data-fr="À propos de moi" data-en="About Me">À propos de moi</h2>
+                        <p data-fr="Data Engineer certifié avec une forte composante en Data Analysis. Je maîtrise l'ensemble du cycle de vie de la donnée : de la conception d'architectures scalable (ETL, Data Warehousing) à l'analyse exploratoire et à la visualisation avec Power BI et Tableau." data-en="Certified Data Engineer with a strong focus on Data Analysis. I master the entire data lifecycle: from designing scalable architectures (ETL, Data Warehousing) to exploratory analysis and visualization with Power BI and Tableau.">
+                            <strong>Data Engineer</strong> certifié avec une forte composante en <strong>Data Analysis</strong>. Je maîtrise l'ensemble du cycle de vie de la donnée : de la conception d'architectures scalable (ETL, Data Warehousing) à l'analyse exploratoire et à la visualisation avec Power BI et Tableau.
+                        </p>
+                        <p data-fr="Je me positionne comme le pont entre les données brutes et les équipes métier, en garantissant à la fois la fiabilité des infrastructures et la clarté des insights." data-en="I position myself as the bridge between raw data and business teams, guaranteeing both infrastructure reliability and clarity of insights.">
+                            Je me positionne comme le pont entre les données brutes et les équipes métier, en garantissant à la fois la fiabilité des infrastructures et la clarté des insights.
+                        </p>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">6+</div>
+                                <div class="stat-label" data-fr="Ans d'expérience" data-en="Years Experience">Ans d'expérience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">40+</div>
+                                <div class="stat-label" data-fr="Projets data" data-en="Data Projects">Projets data</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label" data-fr="Dashboards créés" data-en="Dashboards Built">Dashboards créés</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Skills Section -->
+            <article class="card full-width" id="skills">
+                <div class="skills-header fade-in">
+                    <h2 data-fr="Compétences Techniques" data-en="Technical Skills">Compétences Techniques</h2>
+                    <p data-fr="De l'ingénierie des données à l'analyse décisionnelle" data-en="From Data Engineering to Business Intelligence">De l'ingénierie des données à l'analyse décisionnelle</p>
+                </div>
+                <div class="skills-grid">
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/python.png" alt="Python">
+                        </div>
+                        <div class="skill-name">Python</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/spark.png" alt="Apache Spark">
+                        </div>
+                        <div class="skill-name">Apache Spark</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PySpark</span>
+                            <span class="skill-tag">Big Data</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/database.png" alt="SQL">
+                        </div>
+                        <div class="skill-name">SQL (Avancé)</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">BigQuery</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/etl.png" alt="ETL Airflow">
+                        </div>
+                        <div class="skill-name">Orchestration</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Airflow</span>
+                            <span class="skill-tag">dbt</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/postgres.png" alt="Data Warehouse">
+                        </div>
+                        <div class="skill-name">Data Warehousing</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Redshift</span>
+                            <span class="skill-tag">Snowflake</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/bi.png" alt="Power BI Tableau">
+                        </div>
+                        <div class="skill-name">BI & Viz</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/cloud.png" alt="Cloud">
+                        </div>
+                        <div class="skill-name">Cloud</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">GCP</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/docker.png" alt="Docker">
+                        </div>
+                        <div class="skill-name">Docker</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Container</span>
+                            <span class="skill-tag">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/git.png" alt="Git">
+                        </div>
+                        <div class="skill-name">Git</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">GitLab</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <img src="images/skills/ml.png" alt="Data Analysis">
+                        </div>
+                        <div class="skill-name">Data Analysis</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Stats</span>
+                            <span class="skill-tag">EDA</span>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- Certifications Section -->
+            <article class="card full-width" id="certifications">
+                <div class="skills-header fade-in">
+                    <h2 data-fr="Certifications Professionnelles" data-en="Professional Certifications">Certifications Professionnelles</h2>
+                    <p data-fr="Expertise certifiée en ingénierie et analyse de données" data-en="Certified expertise in data engineering and analysis">Expertise certifiée en ingénierie et analyse de données</p>
+                </div>
+                <div class="certifications-grid">
+                    
+                    <div class="certification-card fade-in">
+                        <div class="cert-badge">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-provider">Amazon Web Services</span>
+                            <h3 class="cert-title">AWS Certified Data Engineer - Associate</h3>
+                            <div class="cert-date">
+                                <i class="fas fa-calendar-check"></i>
+                                <span data-fr="Obtenue : Février 2025" data-en="Obtained: February 2025">Obtenue : Février 2025</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span class="cert-skill-tag">AWS</span>
+                                <span class="cert-skill-tag">ETL</span>
+                                <span class="cert-skill-tag">Glue</span>
+                            </div>
+                            <a href="#" class="cert-verify">
+                                <span data-fr="Vérifier la certification" data-en="Verify Certificate">Vérifier la certification</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certification-card fade-in">
+                        <div class="cert-badge">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-provider">Google Cloud</span>
+                            <h3 class="cert-title">Professional Data Engineer</h3>
+                            <div class="cert-date">
+                                <i class="fas fa-calendar-check"></i>
+                                <span data-fr="Obtenue : Septembre 2024" data-en="Obtained: September 2024">Obtenue : Septembre 2024</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span class="cert-skill-tag">GCP</span>
+                                <span class="cert-skill-tag">BigQuery</span>
+                                <span class="cert-skill-tag">Dataflow</span>
+                            </div>
+                            <a href="#" class="cert-verify">
+                                <span data-fr="Vérifier la certification" data-en="Verify Certificate">Vérifier la certification</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certification-card fade-in">
+                        <div class="cert-badge">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-provider">Microsoft</span>
+                            <h3 class="cert-title">Power BI Data Analyst Associate</h3>
+                            <div class="cert-date">
+                                <i class="fas fa-calendar-check"></i>
+                                <span data-fr="Obtenue : Mai 2024" data-en="Obtained: May 2024">Obtenue : Mai 2024</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span class="cert-skill-tag">Power BI</span>
+                                <span class="cert-skill-tag">DAX</span>
+                                <span class="cert-skill-tag">Viz</span>
+                            </div>
+                            <a href="#" class="cert-verify">
+                                <span data-fr="Vérifier la certification" data-en="Verify Certificate">Vérifier la certification</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certification-card fade-in">
+                        <div class="cert-badge">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-provider">Databricks</span>
+                            <h3 class="cert-title">Data Engineer Associate</h3>
+                            <div class="cert-date">
+                                <i class="fas fa-calendar-check"></i>
+                                <span data-fr="Obtenue : Décembre 2024" data-en="Obtained: December 2024">Obtenue : Décembre 2024</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span class="cert-skill-tag">Spark</span>
+                                <span class="cert-skill-tag">Delta Lake</span>
+                                <span class="cert-skill-tag">SQL</span>
+                            </div>
+                            <a href="#" class="cert-verify">
+                                <span data-fr="Vérifier la certification" data-en="Verify Certificate">Vérifier la certification</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certification-card fade-in">
+                        <div class="cert-badge">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-provider">Tableau</span>
+                            <h3 class="cert-title">Tableau Desktop Specialist</h3>
+                            <div class="cert-date">
+                                <i class="fas fa-calendar-check"></i>
+                                <span data-fr="Obtenue : Mars 2024" data-en="Obtained: March 2024">Obtenue : Mars 2024</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span class="cert-skill-tag">Tableau</span>
+                                <span class="cert-skill-tag">Prep</span>
+                                <span class="cert-skill-tag">Desktop</span>
+                            </div>
+                            <a href="#" class="cert-verify">
+                                <span data-fr="Vérifier la certification" data-en="Verify Certificate">Vérifier la certification</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="certification-card fade-in">
+                        <div class="cert-badge">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-provider">DataCamp</span>
+                            <h3 class="cert-title">Data Analyst with Python</h3>
+                            <div class="cert-date">
+                                <i class="fas fa-calendar-check"></i>
+                                <span data-fr="Obtenue : Janvier 2024" data-en="Obtained: January 2024">Obtenue : Janvier 2024</span>
+                            </div>
+                            <div class="cert-skills">
+                                <span class="cert-skill-tag">Pandas</span>
+                                <span class="cert-skill-tag">Matplotlib</span>
+                                <span class="cert-skill-tag">Seaborn</span>
+                            </div>
+                            <a href="#" class="cert-verify">
+                                <span data-fr="Vérifier la certification" data-en="Verify Certificate">Vérifier la certification</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- Projects Section -->
+            <article class="card full-width" id="projects">
+                <div class="skills-header fade-in">
+                    <h2 data-fr="Projets Data" data-en="Data Projects">Projets Data</h2>
+                    <p data-fr="De l'ingénierie à la visualisation : des projets concrets" data-en="From engineering to visualization: real-world projects">De l'ingénierie à la visualisation : des projets concrets</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="images/projects/pipeline.jpg" alt="ETL Ventes">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">ETL</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <h3 class="project-title" data-fr="Pipeline ETL Automatisé" data-en="Automated ETL Pipeline">Pipeline ETL Automatisé</h3>
+                            <p class="project-description" data-fr="Extraction de données API vers PostgreSQL avec Airflow" data-en="API data extraction to PostgreSQL with Airflow">Extraction de données API vers PostgreSQL avec Airflow</p>
+                            <a href="#" class="project-link">
+                                <span data-fr="Voir le projet" data-en="View Project">Voir le projet</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="images/projects/dashboard.jpg" alt="Dashboard Financier">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">DAX</span>
+                            </div>
+                            <h3 class="project-title" data-fr="Dashboard Financier Interactif" data-en="Interactive Financial Dashboard">Dashboard Financier Interactif</h3>
+                            <p class="project-description" data-fr="Modélisation et visualisation des KPIs de rentabilité" data-en="Modeling and visualization of profitability KPIs">Modélisation et visualisation des KPIs de rentabilité</p>
+                            <a href="#" class="project-link">
+                                <span data-fr="Voir le projet" data-en="View Project">Voir le projet</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="images/projects/warehouse.jpg" alt="Data Warehouse Marketing">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">BigQuery</span>
+                                <span class="project-tag">dbt</span>
+                            </div>
+                            <h3 class="project-title" data-fr="Data Warehouse Marketing" data-en="Marketing Data Warehouse">Data Warehouse Marketing</h3>
+                            <p class="project-description" data-fr="Centralisation des données clients et campagnes sur GCP" data-en="Centralization of customer and campaign data on GCP">Centralisation des données clients et campagnes sur GCP</p>
+                            <a href="#" class="project-link">
+                                <span data-fr="Voir le projet" data-en="View Project">Voir le projet</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="images/projects/nlp.jpg" alt="Analyse Sentiment">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">Python</span>
+                            </div>
+                            <h3 class="project-title" data-fr="Analyse de Sentiment (Satisfaction)" data-en="Sentiment Analysis (Satisfaction)">Analyse de Sentiment (Satisfaction)</h3>
+                            <p class="project-description" data-fr="Traitement des avis clients avec NLTK et visualisation" data-en="Processing customer reviews with NLTK and visualization">Traitement des avis clients avec NLTK et visualisation</p>
+                            <a href="#" class="project-link">
+                                <span data-fr="Voir le projet" data-en="View Project">Voir le projet</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="images/projects/cluster.jpg" alt="Analyse Logs Serveur">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">Spark</span>
+                                <span class="project-tag">Streaming</span>
+                            </div>
+                            <h3 class="project-title" data-fr="Analyse Logs Temps Réel" data-en="Real-time Log Analysis">Analyse Logs Temps Réel</h3>
+                            <p class="project-description" data-fr="Traitement streaming de logs avec Kafka et Spark" data-en="Streaming log processing with Kafka and Spark">Traitement streaming de logs avec Kafka et Spark</p>
+                            <a href="#" class="project-link">
+                                <span data-fr="Voir le projet" data-en="View Project">Voir le projet</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="images/projects/ml-model.jpg" alt="Prédiction Churn">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Scikit-learn</span>
+                            </div>
+                            <h3 class="project-title" data-fr="Prédiction du Churn Client" data-en="Customer Churn Prediction">Prédiction du Churn Client</h3>
+                            <p class="project-description" data-fr="Modèle de classification et déploiement d'une API Flask" data-en="Classification model and Flask API deployment">Modèle de classification et déploiement d'une API Flask</p>
+                            <a href="#" class="project-link">
+                                <span data-fr="Voir le projet" data-en="View Project">Voir le projet</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Contact Section -->
+            <article class="card full-width" id="contact">
+                <div class="contact-grid fade-in">
+                    <div class="contact-illustration">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <h2 data-fr="Discutons de vos besoins data" data-en="Let's discuss your data needs">Discutons de vos besoins data</h2>
+                        <p data-fr="Que ce soit pour architecturer un data lake ou créer un dashboard, je suis là pour vous aider." data-en="Whether it's architecting a data lake or creating a dashboard, I'm here to help.">Que ce soit pour architecturer un data lake ou créer un dashboard, je suis là pour vous aider.</p>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nom complet</label>
+                                    <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" placeholder="Projet Data Engineering / Analyse" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Décrivez votre projet ou votre besoin..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width:100%">
+                                <i class="fas fa-paper-plane"></i>
+                                Envoyer le Message
+                            </button>
+                        </form>
+                        <div class="contact-info-items">
+                            <div class="contact-info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>
+                                    <a href="mailto:alex.chen@example.com">
+                                        alex.chen@example.com
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Lyon, France</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 <strong>BEA ELIE</strong> - Data Engineer & Data Analyst. <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/alex-chen-data" rel="noopener noreferrer" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/alexchendata" rel="noopener noreferrer" target="_blank" class="social-link github"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/alexchendata" rel="noopener noreferrer" target="_blank" class="social-link twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
