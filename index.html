@@ -102,11 +102,22 @@
                         Passionné par la transformation des <strong>données en insights actionnables</strong>. Expert en pipelines de données, machine learning et visualisation avancée. Je conçois des solutions data-driven qui génèrent de la valeur métier mesurable.
                     </p>
                     <div class="hero-buttons">
-                        <a id="downloadCV" href="#" class="btn btn-primary">
+
+                        <!-- CV détaillé -->
+                        <a id="downloadCVDetaille" href="#" class="btn btn-primary">
                             <i class="fas fa-download"></i>
-                            <span data-fr="Télécharger CV" data-en="Download CV">Télécharger CV</span>
-                          </a>
-                        <a href="#contact" class="btn btn-secondary" data-fr="Me Contacter" data-en="Contact Me">Me Contacter</a>
+                            <span data-fr="CV Détaillé" data-en="Detailed CV">CV Détaillé</span>
+                        </a>
+
+                        <!-- CV minimal -->
+                        <a id="downloadCVMinimal" href="#" class="btn btn-primary">
+                            <i class="fas fa-download"></i>
+                            <span data-fr="CV Minimal" data-en="Minimal CV">CV Minimal</span>
+                        </a>
+
+                        <a href="#contact" class="btn btn-secondary" data-fr="Me Contacter" data-en="Contact Me">
+                            Me Contacter
+                        </a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -717,13 +728,24 @@
     </div>
     <!-- scripts cv-->
     <script>
-        document.getElementById("downloadCV").addEventListener("click", function (e) {
-        e.preventDefault();
-        const link = document.createElement("a");
-        link.href = "cv_bea_elieV1_5.pdf"; // chemin vers ton PDF
-        link.download = "CV-Elie.pdf"; // nom du fichier téléchargé
-        link.click();
-         });
+                // CV détaillé
+        document.getElementById("downloadCVDetaille").addEventListener("click", function (e) {
+            e.preventDefault();
+            const link = document.createElement("a");
+            link.href = "cv_detaille.pdf"; // ton CV détaillé
+            link.download = "CV-Elie-DetailleEstiam.pdf";
+            link.click();
+        });
+
+        // CV minimal
+        document.getElementById("downloadCVMinimal").addEventListener("click", function (e) {
+            e.preventDefault();
+            const link = document.createElement("a");
+            link.href = "cv_minimal.pdf"; // ton CV minimal
+            link.download = "CV-Elie_bea.pdf";
+            link.click();
+        });
+
     </script>
 
 
