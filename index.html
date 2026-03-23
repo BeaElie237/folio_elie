@@ -106,8 +106,9 @@
                         <!-- CV minimal -->
                         <a id="downloadCVMinimal" href="#" class="btn btn-primary">
                             <i class="fas fa-download"></i>
-                            <span data-fr="CV Minimal" data-en="Minimal CV">CV </span>
+                            <span data-fr="CV Minimal" data-en="Minimal CV">CV</span>
                         </a>
+
 
                         <a href="#contact" class="btn btn-secondary" data-fr="Me Contacter" data-en="Contact Me">
                             Me Contacter
@@ -1026,27 +1027,22 @@
         </footer>
     </div>
     <!-- scripts cv-->
-    <script>
-                // CV détaillé
-        document.getElementById("downloadCVDetaille").addEventListener("click", function (e) {
-            e.preventDefault();
-            const link = document.createElement("a");
-            link.href = "CV-Elie-DetailleEstiam.pdf"; // ton CV détaillé
-            link.download = "CV-Elie-DetailleEstiam.pdf";
-            link.click();
-        });
+            <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const btn = document.getElementById("downloadCVMinimal");
 
-        // CV minimal
-        document.getElementById("downloadCVMinimal").addEventListener("click", function (e) {
-            e.preventDefault();
-            const link = document.createElement("a");
-            link.href = "CV-Elie_bea.pdf"; // ton CV minimal
-            link.download = "CV-Elie_bea.pdf";
-            link.click();
-        });
+                btn.addEventListener("click", function (e) {
+                    e.preventDefault();
 
-    </script>
-
+                    const link = document.createElement("a");
+                    link.href = "bea_elie_cv0.3.pdf";  // Ton fichier PDF
+                    link.download = "CV-Elie_bea.pdf"; // Nom du fichier téléchargé
+                    document.body.appendChild(link);   // Nécessaire sur certains navigateurs
+                    link.click();
+                    document.body.removeChild(link);
+                });
+            });
+            </script>
 
     <!-- Particles.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
