@@ -635,7 +635,7 @@ nav {
 .hero-illustration {
     width: 100%;
     height: 500px;
-    background: url('images/elie.jpg') center/cover;
+    background: url('images/eliepp.png') center/cover;
     border-radius: var(--border-radius);
     position: relative;
     animation: float 3s ease-in-out infinite;
@@ -1512,7 +1512,7 @@ nav {
 .contact-illustration {
     width: 100%;
     height: 400px;
-    background: url('images/contacts.jpeg') center/cover;
+    background: url('images/elie.jpeg') center/cover;
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
